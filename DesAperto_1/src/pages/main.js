@@ -13,7 +13,7 @@ export default class Main extends Component {
 		return(
 		<View style={styles.container}>
 			<Button style={styles.buttonCor}
-          	title="Press me"
+          	title="Sair"
           	onPress={() => Alert.alert('Cannot press this one')}
         	/>
 		<ScrollView>
@@ -40,7 +40,8 @@ const styles = StyleSheet.create({
 	},
 	list: {
 		padding: 35,
-		fontSize: 20
+		fontSize: 20,
+		color: "#FFF"
 	},
 	listEvents: {
 		backgroundColor: "#FFF",
