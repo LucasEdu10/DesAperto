@@ -1,7 +1,14 @@
 import React, { Component } from "react";
 //import api from " ../services/api";
 
-import { View, Text, ScrollView, FlatList, StyleSheet, Button , Alert } from "react-native";
+import { View,
+		Text,
+		ScrollView,
+		FlatList,
+		StyleSheet,
+		Button,
+		Alert
+		} from "react-native";
 
 export default class Main extends Component {
 
@@ -18,15 +25,30 @@ export default class Main extends Component {
         	/>
 		<ScrollView>
 			<Text style={styles.list}> Ultimas transações </Text>
-			<Text style={styles.listEvents}> Text TESTE TESTE </Text>
-			<Text style={styles.listEvents}> Text TESTE TESTE </Text>
-			<Text style={styles.listEvents}> Text TESTE TESTE </Text>
-			<Text style={styles.listEvents}> Text TESTE TESTE </Text>
-			<Text style={styles.listEvents}> Text TESTE TESTE </Text>
-			<Text style={styles.listEvents}> Text TESTE TESTE </Text>
-			<Text style={styles.listEvents}> Text TESTE TESTE </Text>
-			<Text style={styles.listEvents}> Text TESTE TESTE </Text>
-			<Text style={styles.listEvents}> Text TESTE TESTE </Text>
+			<View style={styles.postContainer}>
+			<Text style={styles.postTitle}>Lucas Eduardo</Text>
+			<Text sytle={styles.postSub}>TESTE TESTE</Text>
+			</View>
+			<View style={styles.postContainer}>
+			<Text style={styles.postTitle}>Lucas Eduardo</Text>
+			<Text style={styles.postSub}> Text TESTE TESTE </Text>
+			</View>
+			<View style={styles.postContainer}>
+			<Text style={styles.postTitle}>Lucas Eduardo</Text>
+			<Text style={styles.postSub}> Text TESTE TESTE </Text>
+			</View>
+			<View style={styles.postContainer}>
+			<Text style={styles.postSub}> Text TESTE TESTE </Text>
+			</View>
+			<View style={styles.postContainer}>
+			<Text style={styles.postSub}> Text TESTE TESTE </Text>
+			</View>
+			<View style={styles.postContainer}>
+			<Text style={styles.postSub}> Text TESTE TESTE </Text>
+			</View>
+			<View style={styles.postContainer}>
+			<Text style={styles.postSub}> Text TESTE TESTE </Text>
+			</View>
 		</ScrollView>
 		</View>
 		);
@@ -36,7 +58,7 @@ export default class Main extends Component {
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		backgroundColor: "#0265b3"
+		backgroundColor: "#23B0FF"
 	},
 	list: {
 		padding: 35,
@@ -44,15 +66,28 @@ const styles = StyleSheet.create({
 		color: "#FFF"
 	},
 	listEvents: {
+		marginHorizontal: 20,
+		marginVertical: 10,
 		backgroundColor: "#FFF",
-		borderWidth: 1,
-		borderColor: "#DDD",
-		borderRadius: 20,
 		padding: 20,
-		marginBottom: 20
+
 	},
 	buttonCor: {
 		color:  "#FFF"
+	},
+	postTitle: {
+		fontSize: 18,
+		fontWeight: "bold"
+	},
+	postContainer: {
+		marginHorizontal: 20,
+		marginVertical: 10,
+		backgroundColor: "#FFF",
+		padding: 20,
+
+	},
+	postSub: {
+
 	}
 
 });

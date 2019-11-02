@@ -33,7 +33,7 @@ export default class SingIn extends Component {
 		return(
 			<View style={styles.container}>
 				<Image
-					source={require("../assests/logo.png")}
+					source={require("../assests/logo-2.png")}
 					style={styles.logo}
 				/>
 				<TextInput 
@@ -57,10 +57,9 @@ export default class SingIn extends Component {
 				</TouchableOpacity>
 
 				<TouchableOpacity
-					style={styles.subLogin}
 					onPress={() => this.props.navigation.navigate("MainScreen")}
 					>
-					<Text> Realizar login sem Cadastro</Text>
+					<Text style={styles.subLogin}>Realizar login sem Cadastro</Text>
 				</TouchableOpacity>
 			</View>
 		)
@@ -69,7 +68,7 @@ export default class SingIn extends Component {
 }
 
 	const auth = {
-  	user: 'lucas',
+  	user: 'Lucas',
   	password: 'teste'
 	}
 
@@ -78,13 +77,13 @@ const styles = StyleSheet.create({
 		flex: 1,
 		justifyContent: "center",
 		alignItems: "center",
-		backgroundColor: "#0265b3"
+		backgroundColor: "#23B0FF"
 	},
 	logo: {
 		marginTop: -70,
-		width: 150,
+		width: 160,
 		height: 150,
-		borderRadius: 100
+		borderRadius: 200
 	},
 	text: {
 		marginTop: 10,
@@ -99,19 +98,23 @@ const styles = StyleSheet.create({
 	buttonLogin: {
 		width: 250,
 		height: 42,
-		backgroundColor: "#3498db",
+		backgroundColor: "#FFF",
 		marginTop: 10,
-		borderRadius: 4,
+		borderRadius: 9,
 		alignItems: "center",
 		justifyContent: "center",
 	},
 	login: {
-		fontSize: 16,
-		color: "#FFF"
+		fontSize: 20,
+		color: "#23B0FF"
 
 	},
 	subLogin: {
 		marginTop: 40,
+		color: "#FFF"
+	},
+	copyrigth: {
+		marginTop: 100,
 		color: "#FFF"
 	}
 
