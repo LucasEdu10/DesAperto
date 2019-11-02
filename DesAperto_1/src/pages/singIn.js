@@ -11,10 +11,22 @@ import { View,
 
 export default class SingIn extends Component {
 
+	constructor(props) {
+    super(props);
+    this.state = {user: '', password: ''};
+  	}
+
 
 
 	clicou = () => {
-		this.props.navigation.navigate("Main")
+		console.log(this.state.user);  // para printar no console, para saber os valores recebidos
+        console.log(this.state.password);
+
+		if (this.state.user === auth.user && this.state.password === auth.password) {
+			this.props.navigation.navigate("MainScreen")
+		}else{
+			Alert.alert('Acesso Negado')
+		}
 	}
 	
 	render(){
@@ -27,11 +39,15 @@ export default class SingIn extends Component {
 				<TextInput 
 					style={styles.text}
 					placeholder="Digite seu E-mail"
+					onChangeText={(user) => this.setState({user})}
+          			value={this.state.user}
 				/>
 				<TextInput 
 					style={styles.text}
 					secureTextEntry={true}
 					placeholder="Digite sua senha"
+					onChangeText={(password) => this.setState({password})}
+          			value={this.state.password}
 				/>
 				<TouchableOpacity
 				style={styles.buttonLogin}
@@ -42,7 +58,7 @@ export default class SingIn extends Component {
 
 				<TouchableOpacity
 					style={styles.subLogin}
-					onPress={() => {this.clicou()}}
+					onPress={() => this.props.navigation.navigate("MainScreen")}
 					>
 					<Text> Realizar login sem Cadastro</Text>
 				</TouchableOpacity>
@@ -51,6 +67,11 @@ export default class SingIn extends Component {
 
 	}
 }
+
+	const auth = {
+  	user: 'lucas',
+  	password: 'teste'
+	}
 
 const styles = StyleSheet.create({
 	container: {
