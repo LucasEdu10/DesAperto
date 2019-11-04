@@ -85,7 +85,6 @@ export default class SingIn extends Component {
 					>
 					<Text style={styles.subLogin}>Realizar login sem Cadastro</Text>
 				</TouchableOpacity>
-				<Text></Text>
 			</View>
 		)
 
