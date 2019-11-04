@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "285071733008",
+    "firebase_url": "https://desaperto-de656.firebaseio.com",
+    "project_id": "desaperto-de656",
+    "storage_bucket": "desaperto-de656.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:285071733008:android:f174bfa54b134b66d3b595",
+        "android_client_info": {
+          "package_name": "com.desaperto_1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "285071733008-lg9l0b6tgvaln184v89j8tcaq0o237ep.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAcVprqvqw767oUFxNGY1Fw2OQg6N0KlH0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "285071733008-lg9l0b6tgvaln184v89j8tcaq0o237ep.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

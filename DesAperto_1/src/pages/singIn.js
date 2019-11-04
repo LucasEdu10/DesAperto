@@ -8,12 +8,32 @@ import { View,
 		TouchableOpacity,
 		TextInput
 		} from "react-native";
+import firebase from "react-native-firebase";
+
 
 export default class SingIn extends Component {
 
-	constructor(props) {
+	/*constructor(props) {
     super(props);
-    this.state = {user: '', password: ''};
+    this.state = {email: '', password: ''};
+  	}*/
+
+  	state = {
+  		email: '',
+  		password: '',
+  		isAuthenticated: false,
+  	};
+
+  	login = async () => {
+  		const { email, password } = this.state;
+
+  		try{
+  			const user = await firebase.auth().signInWithEmailAndPassword(email, password);
+  			this.setState({ isAuthenticated: true });
+  			console.log(user);
+  		}catch (err){
+  			console.log(err);
+  		}
   	}
 
 
@@ -21,12 +41,14 @@ export default class SingIn extends Component {
 	clicou = () => {
 		console.log(this.state.user);  // para printar no console, para saber os valores recebidos
         console.log(this.state.password);
-
-		if (this.state.user === auth.user && this.state.password === auth.password) {
+        this.props.navigation.navigate("MainScreen")
+        //Autenticação local
+		/*if (this.state.user === auth.user && this.state.password === auth.password) {
+			Alert.alert('Login com sucesso!')
 			this.props.navigation.navigate("MainScreen")
 		}else{
 			Alert.alert('Acesso Negado')
-		}
+		}*/
 	}
 	
 	render(){
@@ -39,8 +61,8 @@ export default class SingIn extends Component {
 				<TextInput 
 					style={styles.text}
 					placeholder="Digite seu E-mail"
-					onChangeText={(user) => this.setState({user})}
-          			value={this.state.user}
+					onChangeText={(email) => this.setState({email})}
+          			value={this.state.email}
 				/>
 				<TextInput 
 					style={styles.text}
@@ -50,17 +72,20 @@ export default class SingIn extends Component {
           			value={this.state.password}
 				/>
 				<TouchableOpacity
-				style={styles.buttonLogin}
-					onPress={() => {this.clicou()}}
+					style={styles.buttonLogin}
+					onPress={() => {this.login()}}
 					>
 					<Text style={styles.login}>Login</Text>
 				</TouchableOpacity>
+
+				//{ this.state.isAuthenticated ? <Text>Logado com sucesso!</Text> : '' }
 
 				<TouchableOpacity
 					onPress={() => this.props.navigation.navigate("MainScreen")}
 					>
 					<Text style={styles.subLogin}>Realizar login sem Cadastro</Text>
 				</TouchableOpacity>
+				<Text></Text>
 			</View>
 		)
 
