@@ -6,28 +6,7 @@ import {
 
 import SingIn from "./pages/singIn";
 import Main from "./pages/main";
-
-/*export default createStackNavigator({
-	SingInScreen: {
-    screen: SingIn,
-    navigationOptions: {
-      headerMode: "none",
-      headerStyle: {
-        backgroundColor: "#0265b3",
-      },
-      headerTintColor: Colors.white
-    }
-  },	
-	MainScreen: {
-    screen: Main,
-    navigationOptions: {
-      headerStyle: {
-        backgroundColor: "#145493",
-      },
-      headerTintColor: Colors.white
-    }
-  },
-});*/
+import CadastroUser from "./pages/cadastroUser";
 
 export default createStackNavigator(
   {
@@ -41,6 +20,15 @@ export default createStackNavigator(
       screen: Main,
       navigationOptions: {
         headerStyle: {
+          backgroundColor: "#23B0FF",
+        },
+        headerTintColor: Colors.white
+      }
+    },
+    CadastroUserScreen: {
+      screen: CadastroUser,
+      navigationOptions: {
+      headerStyle: {
           backgroundColor: "#23B0FF",
         },
         headerTintColor: Colors.white
