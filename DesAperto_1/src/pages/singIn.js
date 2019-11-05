@@ -13,11 +13,6 @@ import firebase from "react-native-firebase";
 
 export default class SingIn extends Component {
 
-	/*constructor(props) {
-    super(props);
-    this.state = {email: '', password: ''};
-  	}*/
-
   	state = {
   		email: '',
   		password: '',
@@ -30,8 +25,10 @@ export default class SingIn extends Component {
   		try{
   			const user = await firebase.auth().signInWithEmailAndPassword(email, password);
   			this.setState({ isAuthenticated: true });
+            this.props.navigation.navigate("MainScreen")
   			console.log(user);
   		}catch (err){
+            Alert.alert("Acesso Negado")
   			console.log(err);
   		}
   	}
@@ -39,16 +36,8 @@ export default class SingIn extends Component {
 
 
 	clicou = () => {
-		console.log(this.state.user);  // para printar no console, para saber os valores recebidos
-        console.log(this.state.password);
-        this.props.navigation.navigate("MainScreen")
-        //Autenticação local
-		/*if (this.state.user === auth.user && this.state.password === auth.password) {
-			Alert.alert('Login com sucesso!')
-			this.props.navigation.navigate("MainScreen")
-		}else{
-			Alert.alert('Acesso Negado')
-		}*/
+		{/*console.log(this.state.user);*/}
+        this.props.navigation.navigate("CadastroUserScreen")
 	}
 	
 	render(){
@@ -77,24 +66,16 @@ export default class SingIn extends Component {
 					>
 					<Text style={styles.login}>Login</Text>
 				</TouchableOpacity>
-
-				//{ this.state.isAuthenticated ? <Text>Logado com sucesso!</Text> : '' }
-
 				<TouchableOpacity
-					onPress={() => this.props.navigation.navigate("MainScreen")}
+					onPress={() => {this.clicou()}}
 					>
-					<Text style={styles.subLogin}>Realizar login sem Cadastro</Text>
+					<Text style={styles.subLogin}>Realizar cadastro.</Text>
 				</TouchableOpacity>
 			</View>
 		)
 
 	}
 }
-
-	const auth = {
-  	user: 'Lucas',
-  	password: 'teste'
-	}
 
 const styles = StyleSheet.create({
 	container: {
