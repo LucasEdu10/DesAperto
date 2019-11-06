@@ -28,10 +28,7 @@ export default createStackNavigator(
     CadastroUserScreen: {
       screen: CadastroUser,
       navigationOptions: {
-      headerStyle: {
-          backgroundColor: "#23B0FF",
-        },
-        headerTintColor: Colors.white
+        header: null,
       }
     },
   }

@@ -7,7 +7,8 @@ import { View,
 		Alert,
 		TouchableOpacity,
 		TextInput,
-		Button
+		Button,
+		KeyboardAvoidingView,
 		} from "react-native";
 
 import firebase from "react-native-firebase";
@@ -34,8 +35,13 @@ export default class CadastroUser extends Component{
   		}
 	}
 
+	back = () => {
+		this.props.navigation.navigate("SingInScreen")
+	}
+
 	render(){
 		return(
+			<KeyboardAvoidingView behavior="auto" style={styles.container}>
 			<View style={styles.container}>
 			<TextInput
 				style={styles.text}
@@ -45,6 +51,7 @@ export default class CadastroUser extends Component{
 			/>
 			<TextInput
 				style={styles.text}
+				secureTextEntry={true}
 				placeholder="Digite sua senha:"
 				onChangeText={(password) => this.setState({password})}
 				value={this.state.password}
@@ -53,19 +60,26 @@ export default class CadastroUser extends Component{
 				style={styles.text}
 				placeholder="Digite seu nome: *OPCIONAL*"
 			/>
+			<View style={styles.buttonLogin}>
 			<Button 
-				style={styles.buttonLogin}
 				title="Cadastrar"
 				onPress={() => {this.cadastrar()}}
 			/>
+
+			<Button 
+				title="Voltar"
+				onPress={() => {this.back()}}
+			/>
 			</View>
+			</View>
+			</KeyboardAvoidingView>
 		)
 	}
 }
 
 const styles = StyleSheet.create({
 	container: {
-		marginTop: -200,
+		marginTop: -10,
 		flex: 1,
 		justifyContent: "center",
 		alignItems: "center",
@@ -82,13 +96,11 @@ const styles = StyleSheet.create({
 		width: 250
 	},
 	buttonLogin: {
-		width: 250,
-		height: 42,
-		backgroundColor: "#FFF",
-		marginTop: 10,
-		borderRadius: 9,
-		alignItems: "center",
-		justifyContent: "center",
+		margin: 10,
+		width: 200,
+		height: 35,
+		flexDirection: 'row',
+		justifyContent: "space-between",
 	},
 	cadastrar: {
 		borderColor: '#DDD'

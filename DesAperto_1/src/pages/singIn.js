@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 
 import { View, 
+        KeyboardAvoidingView,
 		Text,
 		StyleSheet,
 		Image,
 		Alert,
 		TouchableOpacity,
-		TextInput
+		TextInput,
 		} from "react-native";
 import firebase from "react-native-firebase";
 
@@ -42,6 +43,7 @@ export default class SingIn extends Component {
 	
 	render(){
 		return(
+            <KeyboardAvoidingView behavior="auto" style={styles.container}>
 			<View style={styles.container}>
 				<Image
 					source={require("../assests/logo-2.png")}
@@ -72,6 +74,7 @@ export default class SingIn extends Component {
 					<Text style={styles.subLogin}>Realizar cadastro.</Text>
 				</TouchableOpacity>
 			</View>
+            </KeyboardAvoidingView>
 		)
 
 	}
