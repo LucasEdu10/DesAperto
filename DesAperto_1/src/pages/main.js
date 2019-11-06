@@ -13,9 +13,7 @@ import { View,
 
 export default class Main extends Component {
 
-	clicou = () => {
-		this.props.navigation.naviigate("DesapertoPagScreen")
-	}
+
 
 	sair = () => {
 		this.props.navigation.navigate("SingInScreen")
@@ -41,10 +39,11 @@ export default class Main extends Component {
 			</View>
 		<ScrollView>
 
-			<TouchableOpacity>
-				<View style={styles.postContainer}>
-					<View style={styles.separator2}>
+			<View style={styles.postContainer}>
+				<View style={styles.separator2}>
+					<TouchableOpacity>
 						<Text style={styles.postTitle}>Carteira Virtual</Text>
+						</TouchableOpacity>
 						<View >
 							<Image
 							source={require("../assests/wallet.png")}
@@ -54,7 +53,7 @@ export default class Main extends Component {
 					</View>
 					<Text sytle={styles.postSub}>Carteira virtual, aonde você pode repassar para os seus amigos dinheiro.</Text>
 				</View>
-			</TouchableOpacity>
+			
 
 			<TouchableOpacity>
 				<View style={styles.postContainer}>
@@ -87,8 +86,6 @@ export default class Main extends Component {
 			</TouchableOpacity>
 
 			<TouchableOpacity>
-				onPress={() => {this.clicou()}}
-				>
 				<View style={styles.postContainer}>
 					<View style={styles.separator2}>
 						<Text style={styles.postTitle}>Configurações</Text>
