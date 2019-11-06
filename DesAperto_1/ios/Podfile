@@ -37,6 +37,10 @@ target 'DesAperto_1' do
 
   pod 'RNFirebase', :path => '../node_modules/react-native-firebase'
 
+  pod 'react-native-camera', :path => '../node_modules/react-native-camera'
+
+  pod 'RNPermissions', :path => '../node_modules/react-native-permissions'
+
   target 'DesAperto_1Tests' do
     inherit! :search_paths
     # Pods for testing
