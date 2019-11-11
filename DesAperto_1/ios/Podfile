@@ -41,6 +41,8 @@ target 'DesAperto_1' do
 
   pod 'RNPermissions', :path => '../node_modules/react-native-permissions'
 
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+
   target 'DesAperto_1Tests' do
     inherit! :search_paths
     # Pods for testing

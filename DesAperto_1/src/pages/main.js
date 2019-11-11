@@ -13,16 +13,9 @@ import { View,
 
 export default class Main extends Component {
 
-
-
 	sair = () => {
 		this.props.navigation.navigate("SingInScreen")
 	}
-
-
-	static navigationOptions = {
-		title: "DesAperto"
-	};
 
 	render(){
 		return(

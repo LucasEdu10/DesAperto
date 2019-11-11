@@ -6,19 +6,20 @@ import { View,
 		FlatList,
 		StyleSheet,
 		Button,
-		Alert
+		Alert,
+		ImageBackground
 		} from "react-native";
 
 export default class Welcome extends Component {
 
 	render() {
 		return(
-			/*<View>
+			<View>
 				<Text style={styles.list}> Ultimas transações </Text>
-			</View>*/
-			<ImageBackground source={...} style={{width: '100%', height: '100%'}}>
-    		<Text>Inside</Text>
- 			</ImageBackground>
+			</View>
+			/*<ImageBackground source={"../assests/Background.png"} style={{width: '100%', height: '100%'}}>
+    		//<Text>Inside</Text>
+ 			</ImageBackground>*/
 		);
 	}
 }

@@ -26,7 +26,7 @@ export default class SingIn extends Component {
   		try{
   			const user = await firebase.auth().signInWithEmailAndPassword(email, password);
   			this.setState({ isAuthenticated: true });
-            this.props.navigation.navigate("MainScreen")
+            this.props.navigation.navigate("Home")
   			console.log(user);
   		}catch (err){
             Alert.alert("Acesso Negado")

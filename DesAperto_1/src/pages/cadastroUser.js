@@ -19,16 +19,17 @@ export default class CadastroUser extends Component{
 	state = {
   		email: '',
   		password: '',
+  		displayName: '',
   		isAuthenticated: false,
   	};
 
 	cadastrar = async () => {
-		const { email, password } = this.state;
+		const { email, password, displayName} = this.state;
 
 		try{
-  			const user = await firebase.auth().createUserWithEmailAndPassword(email, password);
+  			const user = await firebase.auth.user().onCreate(email, password);
   			this.setState({ isAuthenticated: true });
-            this.props.navigation.navigate("MainScreen")
+            this.props.navigation.navigate("Home")
   			console.log(user);
   		}catch (err){
   			console.log(err);
@@ -58,7 +59,9 @@ export default class CadastroUser extends Component{
 			/>
 			<TextInput
 				style={styles.text}
-				placeholder="Digite seu nome: *OPCIONAL*"
+				placeholder="Digite seu nome:"
+				onChangeText={(displayName) => this.setState({displayName})}
+				value={this.state.displayName}
 			/>
 			<View style={styles.buttonLogin}>
 			<Button 
