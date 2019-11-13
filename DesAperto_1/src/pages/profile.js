@@ -16,7 +16,9 @@ export default class Profile extends Component {
 
 	render(){
 		return(
-			
-			)
+			<View>
+				<Text style={styles.list}> Ultimas transações </Text>
+			</View>
+			);
 	}
 }
