@@ -13,20 +13,26 @@ import firebase from "react-native-firebase";
 
 
 export default class SingIn extends Component {
+	constructor(props) {
+	    super(props);
 
-  	state = {
-  		email: '',
-  		password: '',
-  		isAuthenticated: false,
-  	};
+	    this.state = {
+	  		email: '',
+	  		password: '',
+	  		isAuthenticated: false,
+	  		user: null
+	  	};
+
+	}
+
+  	
 
   	login = async () => {
-  		const { email, password } = this.state;
 
   		try{
-  			const user = await firebase.auth().signInWithEmailAndPassword(email, password);
-  			this.setState({ isAuthenticated: true });
-            this.props.navigation.navigate("Home")
+  			const user = await firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password);
+  			this.setState({ user: user, isAuthenticated: true });
+            this.props.navigation.navigate("Home", {loginState:this.state});
   			console.log(user);
   		}catch (err){
             Alert.alert("Acesso Negado")

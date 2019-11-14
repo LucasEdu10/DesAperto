@@ -14,22 +14,25 @@ import { View,
 import firebase from "react-native-firebase";
 
 export default class CadastroUser extends Component{
+	constructor(props) {
+	    super(props);
 
-
-	state = {
-  		email: '',
-  		password: '',
-  		displayName: '',
-  		isAuthenticated: false,
-  	};
+	    this.state = {
+	  		email: '',
+	  		password: '',
+  			displayName: '',
+	  		isAuthenticated: false,
+	  		user: null
+	  	};
+	}
 
 	cadastrar = async () => {
-		const { email, password, displayName} = this.state;
 
 		try{
-  			const user = await firebase.auth.user().onCreate(email, password);
-  			this.setState({ isAuthenticated: true });
-            this.props.navigation.navigate("Home")
+  			const user = await firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password);
+  			const response = await firebase.auth().updateProfile({displayName:this.state.displayName, photoUrl: null})
+  			this.setState({ user: user, isAuthenticated: true });
+            this.props.navigation.navigate("Home", {loginState:this.state});
   			console.log(user);
   		}catch (err){
   			console.log(err);

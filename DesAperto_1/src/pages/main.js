@@ -12,16 +12,32 @@ import { View,
 		} from "react-native";
 
 export default class Main extends Component {
+	constructor(props) {
+	    super(props);
+
+	    this.state = {
+	  		email: '',
+	  		password: '',
+	  		isAuthenticated: false,
+	  		user: {displayName:"nulo"}
+	  	};
+
+	}
 
 	sair = () => {
-		this.props.navigation.navigate("SingInScreen")
+		this.props.navigation.navigate("SingInScreen");
 	}
 
 	render(){
+
+		const loginState = this.props.navigation.getParam("loginState", null);
+		console.log("state222", loginState);
+
 		return(
 		<View style={styles.container}>
 			<View style={styles.separator}>
 				<Text style={styles.menu}>Menu</Text>
+				<Text style={styles.menu}>{ state.user.displayName }</Text>
 				<View style={styles.buttonSair}>
 				<Button
 					color="#000"
