@@ -1,5 +1,11 @@
 import React from "react";
-import { createAppContainer, createSwitchNavigator, createStackNavigator, createBottomTabNavigator } from "react-navigation";
+import { createAppContainer,
+         createSwitchNavigator,
+         createStackNavigator,
+         createBottomTabNavigator
+       } from "react-navigation";
+
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import {
   Colors,
@@ -33,10 +39,32 @@ const MyTab = createStackNavigator(
 const MyTabMenu = createBottomTabNavigator(
   {
     Home: {
-      screen: Main,
+      screen: Main
+    },
+    Profile: {
+      screen: Profile
+    },
+  },
+    {
+      defaultNavigationOptions: ({ navigation }) => ({
+        tabBarIcon: ({ focused, horizontal, tintColor }) => {
+          const { routeName } = navigation.state;
+          let IconComponent = Ionicons;
+          let iconName;
+          if (routeName === 'Home') {
+            iconName = "md-home";
+          } else if (routeName === 'Profile') {
+            iconName = "md-contact";
+          }
+          return <IconComponent name={iconName} size={25} color={tintColor} />;
+      },
+    }),
+    tabBarOptions: {
+      activeTintColor: "#23B0FF",
+      inactiveTintColor: 'gray',
     },
   }
-  );
+);
 
 const AppContainer = createAppContainer(createSwitchNavigator(
   {

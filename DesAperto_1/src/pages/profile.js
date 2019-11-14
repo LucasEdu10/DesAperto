@@ -2,13 +2,7 @@ import React, { Component } from "react";
 
 import { View,
 		Text,
-		ScrollView,
-		FlatList,
 		StyleSheet,
-		Button,
-		Alert,
-		Image,
-		TouchableOpacity
 		} from "react-native";
 
 export default class Profile extends Component {
@@ -16,9 +10,22 @@ export default class Profile extends Component {
 
 	render(){
 		return(
-			<View>
-				<Text style={styles.list}> Ultimas transações </Text>
+			<View style={styles.container}>
+				<Text style={styles.text}> Olá {this.state.displayName}</Text>
 			</View>
 			);
 	}
 }
+
+const styles = StyleSheet.create({
+	container: {
+		flex: 1,
+		justifyContent: "center",
+		alignItems: "center",
+		backgroundColor: "#23B0FF"
+	},
+	text: {
+		marginTop: 40,
+		color: "#FFF"
+	}
+})
