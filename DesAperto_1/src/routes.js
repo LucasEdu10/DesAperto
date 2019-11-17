@@ -1,16 +1,21 @@
-import React, { Component } from "react"
-import { createStackNavigator, createBottomTabNavigator } from "react-navigation";
+import React from "react";
+import { createAppContainer,
+         createSwitchNavigator,
+         createStackNavigator,
+         createBottomTabNavigator
+       } from "react-navigation";
 
-import Welcome from "./pages/welcome";
+import Ionicons from 'react-native-vector-icons/Ionicons';
+
+import {
+  Colors,
+} from "react-native/Libraries/NewAppScreen";
+
 import SingIn from "./pages/singIn";
+import Profile from "./pages/profile"
 import Main from "./pages/main";
 import CadastroUser from "./pages/cadastroUser";
 
-<<<<<<< Updated upstream
-import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
-
-export default createBottomTabNavigator (
-=======
 const LoginStack = createStackNavigator(
   {
     SingInScreen: {
@@ -47,55 +52,27 @@ const AppStack = createBottomTabNavigator(
       screen: Profile
     },
   },
->>>>>>> Stashed changes
     {
-      SingInScreen: {
-        screen: SingIn,
-        navigationOptions: {
-          tabBarVisible: false,
-          header: false,
-          tabBarComponent: false,
-        }
-      },
-      Home: {
-        screen: Main
-      },
-      CadastroUserScreen: {
-        screen: CadastroUser,
-      }
-    },
-    {
-      tabBarOptions: {
-          activeTintColor: "#34495e",
-          inactiveTintColor: "#bdc3c7",
-          style: {
-            backgroundColor: "#ecf0f1"
-          },
-          showLabel: true
-      },
-      defaultNavigationOptions: ({navigation}) => ({
-        tabBarIcon: ({focused, horizontal, tintColor}) => {
-          const {routeName} = navigation.state;
-          let IconComponent = FontAwesome5;
+      defaultNavigationOptions: ({ navigation }) => ({
+        tabBarIcon: ({ focused, horizontal, tintColor }) => {
+          const { routeName } = navigation.state;
+          let IconComponent = Ionicons;
           let iconName;
-
-<<<<<<< Updated upstream
-          if(routeName === "Home"){
-              iconName = "home";
-          }else if(routeName === "CadastroUserScreen"){
-              iconName = "user-alt";
-          }else if(routeName === "SingInScreen"){
-              iconName = "cog";
+          if (routeName === 'Home') {
+            iconName = "md-home";
+          } else if (routeName === 'Profile') {
+            iconName = "md-contact";
           }
-          return <IconComponent name={iconName}
-                                size={24}
-                                color={tintColor}
-                  />;
-        },
-      })
-    }
-  );
-=======
+          return <IconComponent name={iconName} size={25} color={tintColor} />;
+      },
+    }),
+    tabBarOptions: {
+      activeTintColor: "#23B0FF",
+      inactiveTintColor: 'gray',
+    },
+  }
+);
+
 const AppContainer = createAppContainer(createSwitchNavigator(
   {
     App: AppStack,
@@ -103,4 +80,3 @@ const AppContainer = createAppContainer(createSwitchNavigator(
   },
   ));
 export default AppContainer;
->>>>>>> Stashed changes

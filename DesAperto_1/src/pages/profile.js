@@ -6,12 +6,6 @@ import { View,
 		FlatList,
 		StyleSheet,
 		Button,
-<<<<<<< Updated upstream
-		Alert,
-		Image,
-		TouchableOpacity
-=======
->>>>>>> Stashed changes
 		} from "react-native";
 
 export default class Profile extends Component {
@@ -23,14 +17,22 @@ export default class Profile extends Component {
 
 	render(){
 		return(
-<<<<<<< Updated upstream
-			
-			)
-=======
 			<View style={styles.container}>
 				<Text style={styles.text}> Olá</Text>
 			</View>
 			);
->>>>>>> Stashed changes
 	}
 }
+
+const styles = StyleSheet.create({
+	container: {
+		flex: 1,
+		justifyContent: "center",
+		alignItems: "center",
+		backgroundColor: "#23B0FF"
+	},
+	text: {
+		marginTop: 40,
+		color: "#FFF"
+	}
+})
