@@ -11,7 +11,7 @@ export default class Profile extends Component {
 	render(){
 		return(
 			<View style={styles.container}>
-				<Text style={styles.text}> Olá {this.state.displayName}</Text>
+				<Text style={styles.text}> Olá </Text>
 			</View>
 			);
 	}
