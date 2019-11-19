@@ -27,9 +27,9 @@ export default class CadastroUser extends Component{
 		const { email, password, displayName} = this.state;
 
 		try{
-  			const user = await firebase.auth.user().onCreate(email, password);
+  			const user = await firebase.auth().createUserWithEmailAndPassword(email, password);
   			this.setState({ isAuthenticated: true });
-            this.props.navigation.navigate("Home")
+            this.props.navigation.navigate("Home", {"email": this.state.email})
   			console.log(user);
   		}catch (err){
   			console.log(err);

@@ -9,9 +9,12 @@ export default class Profile extends Component {
 	
 
 	render(){
+		const { navigation } = this.props;
+		const nomeUser = navigation.getParam("email");
+
 		return(
 			<View style={styles.container}>
-				<Text style={styles.text}> Olá </Text>
+				<Text style={styles.text}> Olá Usuario, Bem vindo! </Text>
 			</View>
 			);
 	}

@@ -8,7 +8,8 @@ import { View,
 		Button,
 		Alert,
 		Image,
-		TouchableOpacity
+		TouchableOpacity,
+		TouchableHighlight
 		} from "react-native";
 
 export default class Main extends Component {
@@ -48,7 +49,7 @@ export default class Main extends Component {
 				</View>
 			
 
-			<TouchableOpacity>
+			<TouchableHighlight>
 				<View style={styles.postContainer}>
 					<View style={styles.separator2}>
 						<Text style={styles.postTitle}>Ultimas Transações</Text>
@@ -61,9 +62,9 @@ export default class Main extends Component {
 					</View>
 					<Text style={styles.postSub}>Aqui podemos ver as ultimas transações feitas</Text>
 				</View>
-			</TouchableOpacity>
+			</TouchableHighlight>
 
-			<TouchableOpacity>
+			<TouchableHighlight>
 				<View style={styles.postContainer}>
 					<View style={styles.separator2}>
 						<Text style={styles.postTitle}>DesAperto Pag</Text>
@@ -76,9 +77,9 @@ export default class Main extends Component {
 					</View>
 					<Text style={styles.postSub}>Com um QRcode, pedemos realizar tranferencias ;)</Text>
 				</View>
-			</TouchableOpacity>
+			</TouchableHighlight>
 
-			<TouchableOpacity>
+			<TouchableHighlight>
 				<View style={styles.postContainer}>
 					<View style={styles.separator2}>
 						<Text style={styles.postTitle}>Configurações</Text>
@@ -91,9 +92,9 @@ export default class Main extends Component {
 					</View>
 					<Text style={styles.postSub}>Alterar configurações</Text>
 				</View>
-			</TouchableOpacity>
+			</TouchableHighlight>
 
-			<TouchableOpacity>
+			<TouchableHighlight>
 				<View style={styles.postContainer}>
 					<View style={styles.separator2}>
 						<Text style={styles.postTitle}>Criar Sala</Text>
@@ -106,14 +107,14 @@ export default class Main extends Component {
 					</View>
 					<Text style={styles.postSub}>Aqui podemos criar uma sala de gastos em um rolê</Text>
 				</View>
-			</TouchableOpacity>
+			</TouchableHighlight>
 
-			<TouchableOpacity>
+			<TouchableHighlight>
 				<View style={styles.postContainer}>
 					<Text style={styles.postTitle}>Lucas Eduardo</Text>
 					<Text style={styles.postSub}> Text TESTE TESTE </Text>
 				</View>
-			</TouchableOpacity>
+			</TouchableHighlight>
 		</ScrollView>
 		</View>
 		);
